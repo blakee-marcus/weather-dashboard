@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <div>
+            Weather Dashboard
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <section class="search-section col-2">
+                <div class="search-form">
+                <form id="search-city">
+                    <label for="search-city">Search for a city:</label> <br>
+                    <input type="text" id="search-city" class="border-box" name="search-city" placeholder="San Diego"> <br>
+                    <button class="search-btn" id="search-submit">Search</button>
+                </form>
+                </div>
+        
+                <div id="past-searches-container">
+                    <ul id="past-searches">
+        
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="active-location col-10 row">
+                <!-- Active City Start -->
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <h3 id="active-city"></h3>
+                        <h4 id="active-date"></h4> 
+                    </div>
+                    <div class="card-body text-dark">
+                        <img src="" id="active-icon">
+                        <h5 class="card-title" >Temp: </h5>
+                        <p class="card-text"> <span id="active-temp"></span>&#176 F </p>
+                        <h5 class="card-title" >Wind: </h5>
+                        <p class="card-text"> <span id="active-wind"></span> MPH</p>
+                        <h5 class="card-title">Humidity: </h5>
+                        <p class="card-text"> <span id="active-humidity"></span>% </p>
+            
+                    </div>
+                </div>
+                <!-- Active Day End -->
+
+                <!-- 5 Day Forecast Start -->
+                <div class="5-day-forecast row">
+                    <h4>5-Day Forecast:</h4>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header" >  <span id="day-1-date"></span> </div>
+                        <div class="card-body">
+                            <img src="" id="day-1-icon">
+                            <h5 class="card-title" >Temp: </h5>
+                            <p class="card-text"> <span id="day-1-temp"></span> </p>
+                            <h5 class="card-title" >Wind: </h5>
+                            <p class="card-text"> <span id="day-1-wind"></span> </p>
+                            <h5 class="card-title">Humidity: </h5>
+                            <p class="card-text"> <span id="day-1-humidity"></span>% </p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header" >  <span id="day-2-date"></span> </div>
+                        <div class="card-body">
+                            <img src="" id="day-2-icon">
+                            <h5 class="card-title" >Temp: </h5>
+                            <p class="card-text"> <span id="day-2-temp"></span> </p>
+                            <h5 class="card-title" >Wind: </h5>
+                            <p class="card-text"> <span id="day-2-wind"></span> </p>
+                            <h5 class="card-title">Humidity: </h5>
+                            <p class="card-text"> <span id="day-2-humidity"></span>% </p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header" >  <span id="day-3-date"></span> </div>
+                        <div class="card-body">
+                            <img src="" id="day-3-icon">
+                            <h5 class="card-title" >Temp: </h5>
+                            <p class="card-text"> <span id="day-3-temp"></span> </p>
+                            <h5 class="card-title" >Wind: </h5>
+                            <p class="card-text"> <span id="day-3-wind"></span> </p>
+                            <h5 class="card-title">Humidity: </h5>
+                            <p class="card-text"> <span id="day-3-humidity"></span>% </p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header" >  <span id="day-4-date"></span> </div>
+                        <div class="card-body">
+                            <img src="" id="day-4-icon">
+                            <h5 class="card-title" >Temp: </h5>
+                            <p class="card-text"> <span id="day-4-temp"></span> </p>
+                            <h5 class="card-title" >Wind: </h5>
+                            <p class="card-text"> <span id="day-4-wind"></span> </p>
+                            <h5 class="card-title">Humidity: </h5>
+                            <p class="card-text"> <span id="day-4-humidity"></span>% </p>
+                        </div>
+                    </div>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header" >  <span id="day-5-date"></span> </div>
+                        <div class="card-body">
+                            <img src="" id="day-5-icon">
+                            <h5 class="card-title" >Temp: </h5>
+                            <p class="card-text"> <span id="day-5-temp"></span> </p>
+                            <h5 class="card-title" >Wind: </h5>
+                            <p class="card-text"> <span id="day-5-wind"></span> </p>
+                            <h5 class="card-title">Humidity: </h5>
+                            <p class="card-text"> <span id="day-5-humidity"></span>% </p>
+                    
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 Day Forecast End -->
+            </section>  
+        </div>l
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

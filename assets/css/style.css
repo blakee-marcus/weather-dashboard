@@ -1,0 +1,57 @@
+html {
+    font-family: 'Overpass', sans-serif;
+}
+
+header {
+    background-image: linear-gradient(to right, #3b6dc3, #230445);
+}
+header div {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-bottom: black solid 2px;
+    padding: 1em;
+    width: 100%;
+}
+
+.search-btn {
+    background-color: #5aa2e9;
+    border: none;
+    border-radius: .3em;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.day-card {
+    background-color: #33475a;
+    display: flex;
+    margin: 1em;
+}
+
+
+.past-btn {
+    background-color: #b7b7b7;
+    border: none;
+    border-radius: .3em;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
