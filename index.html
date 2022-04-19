@@ -18,12 +18,13 @@
 
     <div class="container">
         <div class="row">
+            <!-- Search + Past Searches -->
             <section class="search-section col-2">
                 <div class="search-form">
                 <form id="search-city">
                     <label for="search-city">Search for a city:</label> <br>
-                    <input type="text" id="search-city" class="border-box" name="search-city" placeholder="San Diego"> <br>
-                    <button class="search-btn" id="search-submit">Search</button>
+                    <input type="text" id="search-bar" class="border-box" name="search-city" placeholder="San Diego"> <br>
+                    <button class="search-btn" id="search-submit" type="submit">Search</button>
                 </form>
                 </div>
         
@@ -34,9 +35,9 @@
                 </div>
             </section>
             
-            <section class="active-location col-10 row">
+            <section class="active-location col-10 row ">
                 <!-- Active City Start -->
-                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                <div class="card border-dark mb-3 d-flex" style="max-width: 18rem;">
                     <div class="card-header">
                         <h3 id="active-city"></h3>
                         <h4 id="active-date"></h4> 
@@ -62,9 +63,9 @@
                         <div class="card-body">
                             <img src="" id="day-1-icon">
                             <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-1-temp"></span> </p>
+                            <p class="card-text"> <span id="day-1-temp"></span>&#176 F </p>
                             <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-1-wind"></span> </p>
+                            <p class="card-text"> <span id="day-1-wind"></span>MPH </p>
                             <h5 class="card-title">Humidity: </h5>
                             <p class="card-text"> <span id="day-1-humidity"></span>% </p>
                         </div>
@@ -74,9 +75,9 @@
                         <div class="card-body">
                             <img src="" id="day-2-icon">
                             <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-2-temp"></span> </p>
+                            <p class="card-text"> <span id="day-2-temp"></span>&#176 F </p>
                             <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-2-wind"></span> </p>
+                            <p class="card-text"> <span id="day-2-wind"></span>MPH </p>
                             <h5 class="card-title">Humidity: </h5>
                             <p class="card-text"> <span id="day-2-humidity"></span>% </p>
                         </div>
@@ -86,9 +87,9 @@
                         <div class="card-body">
                             <img src="" id="day-3-icon">
                             <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-3-temp"></span> </p>
+                            <p class="card-text"> <span id="day-3-temp"></span>&#176 F </p>
                             <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-3-wind"></span> </p>
+                            <p class="card-text"> <span id="day-3-wind"></span>MPH </p>
                             <h5 class="card-title">Humidity: </h5>
                             <p class="card-text"> <span id="day-3-humidity"></span>% </p>
                         </div>
@@ -98,9 +99,9 @@
                         <div class="card-body">
                             <img src="" id="day-4-icon">
                             <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-4-temp"></span> </p>
+                            <p class="card-text"> <span id="day-4-temp"></span>&#176 F </p>
                             <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-4-wind"></span> </p>
+                            <p class="card-text"> <span id="day-4-wind"></span>MPH </p>
                             <h5 class="card-title">Humidity: </h5>
                             <p class="card-text"> <span id="day-4-humidity"></span>% </p>
                         </div>
@@ -110,9 +111,9 @@
                         <div class="card-body">
                             <img src="" id="day-5-icon">
                             <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-5-temp"></span> </p>
+                            <p class="card-text"> <span id="day-5-temp"></span>&#176 F </p>
                             <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-5-wind"></span> </p>
+                            <p class="card-text"> <span id="day-5-wind"></span>MPH </p>
                             <h5 class="card-title">Humidity: </h5>
                             <p class="card-text"> <span id="day-5-humidity"></span>% </p>
                     
@@ -124,7 +125,8 @@
         </div>l
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- Link Moment.Js, JQuery, and JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
