@@ -4,6 +4,7 @@ html {
 
 header {
     background-image: linear-gradient(to right, #3b6dc3, #230445);
+    margin-bottom: 1em;
 }
 header div {
     color: white;

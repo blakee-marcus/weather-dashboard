@@ -20,7 +20,7 @@
         <div class="row">
             <!-- Search + Past Searches -->
             <section class="search-section col-2">
-                <div class="search-form">
+                <div class="search-form row">
                 <form id="search-city">
                     <label for="search-city">Search for a city:</label> <br>
                     <input type="text" id="search-bar" class="border-box" name="search-city" placeholder="San Diego"> <br>
@@ -28,7 +28,7 @@
                 </form>
                 </div>
         
-                <div id="past-searches-container">
+                <div id="past-searches-container row">
                     <ul id="past-searches">
         
                     </ul>
@@ -43,14 +43,13 @@
                         <h4 id="active-date"></h4> 
                     </div>
                     <div class="card-body text-dark">
-                        <img src="" id="active-icon">
+                        <img src="" id="active-icon" class="img-fluid">
                         <h5 class="card-title" >Temp: </h5>
                         <p class="card-text"> <span id="active-temp"></span>&#176 F </p>
                         <h5 class="card-title" >Wind: </h5>
                         <p class="card-text"> <span id="active-wind"></span> MPH</p>
                         <h5 class="card-title">Humidity: </h5>
                         <p class="card-text"> <span id="active-humidity"></span>% </p>
-            
                     </div>
                 </div>
                 <!-- Active Day End -->

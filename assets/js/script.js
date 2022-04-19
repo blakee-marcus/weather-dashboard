@@ -9,29 +9,34 @@ var forecastDay4 = moment().add(4, 'days').format("M/D/YYYY");
 var forecastDay5 = moment().add(5, 'days').format("M/D/YYYY");
 
 
-
+// Sets City from search bar
 $(document).ready(function() {
     $("#search-submit").on("click", function(event) {
         event.preventDefault();
+        if ($("#search-bar").val() === "") {
+            alert("Please Enter a City")
+        } else {
+        //Trim Spaces and turns input to lowercase for URL
         var plainCity = $("#search-bar").val();
         var trimCity = plainCity.trim();
         var lowerCity = trimCity.toLowerCase();
 
-        console.log(lowerCity);
+        //send City Name to getWeatherData function
         getWeatherData(lowerCity);
+        }
     });
 });
 
 
 
-
+// Fetches Weather Data from OpenWeatherMap API
 var getWeatherData = function(city) {
 
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
     fetch(queryURL).then(function(response) {
         if (response.ok) {
             return response.json().then(function(data) {
-                // console.log(data);
+                
                 setCurrentInfo(data);
             });
         };
@@ -40,11 +45,12 @@ var getWeatherData = function(city) {
 
 
 var setCurrentInfo = function(data) {
-    console.log(data);
     var currentWeather = data.list[0];
+    console.log(currentWeather);
     //set Current Weather
     $("#active-city").text(data.city.name);
     $("#active-date").text(currentDay);
+    $("#active-icon").attr("src", "http://openweathermap.org/img/wn/" + currentWeather.weather[0].icon +"@2x.png")
     $("#active-temp").text(currentWeather.main.temp);
     $("#active-wind").text(currentWeather.wind.speed);
     $("#active-humidity").text(currentWeather.main.humidity);
@@ -53,8 +59,6 @@ var setCurrentInfo = function(data) {
 
     //Day 1
     var day1Object = data.list[8];
-    var day1date = day1Object.dt_txt;
-    var day1split = day1date.split(" ");
     $("#day-1-date").text(forecastDay1);
     $("#day-1-icon").attr("src", "http://openweathermap.org/img/wn/" + day1Object.weather[0].icon +"@2x.png");
     $("#day-1-temp").text(day1Object.main.temp);
@@ -63,8 +67,6 @@ var setCurrentInfo = function(data) {
 
     //Day 2
     var day2Object = data.list[16];
-    var day2date = day2Object.dt_txt;
-    var day2split = day2date.split(" ");
     $("#day-2-date").text(forecastDay2);
     $("#day-2-icon").attr("src", "http://openweathermap.org/img/wn/" + day2Object.weather[0].icon +"@2x.png");
     $("#day-2-temp").text(day2Object.main.temp);
@@ -73,8 +75,6 @@ var setCurrentInfo = function(data) {
 
     //Day 3
     var day3Object = data.list[24];
-    var day3date = day3Object.dt_txt;
-    var day3split = day3date.split(" ");
     $("#day-3-date").text(forecastDay3);
     $("#day-3-icon").attr("src", "http://openweathermap.org/img/wn/" + day3Object.weather[0].icon +"@2x.png");
     $("#day-3-temp").text(day3Object.main.temp);
@@ -83,8 +83,6 @@ var setCurrentInfo = function(data) {
 
     //Day 4
     var day4Object = data.list[32];
-    var day4date = day4Object.dt_txt;
-    var day4split = day4date.split(" ");
     $("#day-4-date").text(forecastDay4);
     $("#day-4-icon").attr("src", "http://openweathermap.org/img/wn/" + day4Object.weather[0].icon +"@2x.png");
     $("#day-4-temp").text(day4Object.main.temp);
@@ -93,8 +91,6 @@ var setCurrentInfo = function(data) {
 
     //Day 5
     var day5Object = data.list[39];
-    var day5date = day5Object.dt_txt;
-    var day5split = day5date.split(" ");
     $("#day-5-date").text(forecastDay5);
     $("#day-5-icon").attr("src", "http://openweathermap.org/img/wn/" + day5Object.weather[0].icon +"@2x.png");
     $("#day-5-temp").text(day5Object.main.temp);
