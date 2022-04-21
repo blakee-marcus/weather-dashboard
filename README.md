@@ -21,3 +21,6 @@ THEN I am again presented with current and future conditions for that city
 ## Mock-Up
 The following image shows the web application's appearance and functionality:  
 ![Weather Dashboard in use](./assets/images/mockup.png)
+
+## Demo
+Link to [live version](https://blakee-marcus.github.io/weather-dashboard/)
