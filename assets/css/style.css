@@ -14,11 +14,46 @@ header div {
     justify-content: center;
     height: 3em;
 }
+
+body {
+    background-color: #f8ceec;
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    font-weight: 650;
+    margin: 0;
+    padding: 0;
+    font-size: 120px;
+    height: 100px;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 450;
+    color: rgba(60, 60, 62, .5);
+    margin: 10px 0px 5px 20px;
+}
+
+h4 {
+    margin: 10px 0px 5px 20px;
+}
 input[type=text] {
+    background-color: transparent;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    border: none;
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    color: #98989e;
 }
 .search-form {
     display: flex;
@@ -26,26 +61,65 @@ input[type=text] {
     align-items: flex-start;
     justify-content: flex-start;
     border-bottom: black solid 2px;
-    padding: 1em;
-    width: 100%;
+    padding: .5em;
+    border: none;
+    background-color: #1c1c1e;
+    color: #98989e;
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+.icon {
+    position: absolute;
 }
 
 .search-btn {
-    background-color: #5aa2e9;
+    background-color: transparent;
     border: none;
-    border-radius: .3em;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    position: absolute;
+    filter: invert(1);
 }
 
-.day-card {
-    background-color: #33475a;
-    display: flex;
-    margin: 1em;
+.active-info {
+    text-align: center;
+    text-shadow: 1px 1px 3px #000000;
+    color: white;
 }
 
+.forecast-container {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    color: white;
+    padding: 5px;
+    margin: 15px;
+}
+
+.forecast {
+    height: 25px;
+    border-top: #98989e solid 1px;
+    margin: 10px;
+}
+
+.forecast img {
+    max-height: 100%;
+    width: auto;
+}
+
+.low {
+    color: #98989e;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: .5em;
+    color: white;
+    padding: 5px;
+    margin-bottom: 15px;
+}
 
 .past-btn {
     background-color: #b7b7b7;

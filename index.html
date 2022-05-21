@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -16,113 +17,90 @@
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         <div class="row">
-            <!-- Search + Past Searches -->
-            <section class="search-section col-2">
-                <div class="search-form row">
-                <form id="search-city">
-                    <label for="search-city">Search for a city:</label> <br>
-                    <input type="text" id="search-bar" class="border-box" name="search-city" placeholder="San Diego"> <br>
-                    <button class="search-btn" id="search-submit" type="submit">Search</button>
-                </form>
+            <div class="search-form row">
+                <div id="search-city" class="row">
+                    <span>
+                        <i class="bi-search icon"></i>
+                    </span>
+                    <input type="text" id="search-bar" class="search-input" placeholder="Search for a city"> <br>
+                    <button class="search-btn col-12" id="search-submit" type="submit"><i class="bi-arrow-right icon"></i></button>
                 </div>
+            </div>
+        </div>
         
-                <div id="past-searches-container row">
-                    <ul id="past-searches">
-        
-                    </ul>
-                </div>
-            </section>
-            
-            <section class="active-location col-10 row ">
-                <!-- Active City Start -->
-                <div class="card border-dark mb-3 d-flex" style="max-width: 18rem;">
-                    <div class="card-header">
-                        <h3 id="active-city"></h3>
-                        <h4 id="active-date"></h4> 
-                    </div>
-                    <div class="card-body text-dark">
-                        <img src="" id="active-icon" class="img-fluid">
-                        <h5 class="card-title" >Temp: </h5>
-                        <p class="card-text"> <span id="active-temp"></span>&#176 F </p>
-                        <h5 class="card-title" >Wind: </h5>
-                        <p class="card-text"> <span id="active-wind"></span> MPH</p>
-                        <h5 class="card-title">Humidity: </h5>
-                        <p class="card-text"> <span id="active-humidity"></span>% </p>
-                    </div>
-                </div>
+        <section class="row">
+            <!-- Active City Start -->
+            <div class="active-info">
+                <h2 id="active-city"></h1> 
+                <h1><span id="active-temp"></span>&#176</h1> 
+                <img src="" id="active-icon" class="img-fluid"> 
+                <h2 id="weather-desc"></h2> 
+                <h2>H:<span id="active-high"></span>&#176 L:<span id="active-low"></span>&#176</h2> 
+            </div>
+        </section>    
                 <!-- Active Day End -->
 
-                <!-- 5 Day Forecast Start -->
-                <div class="5-day-forecast row">
-                    <h4>5-Day Forecast:</h4>
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header" >  <span id="day-1-date"></span> </div>
-                        <div class="card-body">
-                            <img src="" id="day-1-icon">
-                            <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-1-temp"></span>&#176 F </p>
-                            <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-1-wind"></span>MPH </p>
-                            <h5 class="card-title">Humidity: </h5>
-                            <p class="card-text"> <span id="day-1-humidity"></span>% </p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header" >  <span id="day-2-date"></span> </div>
-                        <div class="card-body">
-                            <img src="" id="day-2-icon">
-                            <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-2-temp"></span>&#176 F </p>
-                            <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-2-wind"></span>MPH </p>
-                            <h5 class="card-title">Humidity: </h5>
-                            <p class="card-text"> <span id="day-2-humidity"></span>% </p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header" >  <span id="day-3-date"></span> </div>
-                        <div class="card-body">
-                            <img src="" id="day-3-icon">
-                            <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-3-temp"></span>&#176 F </p>
-                            <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-3-wind"></span>MPH </p>
-                            <h5 class="card-title">Humidity: </h5>
-                            <p class="card-text"> <span id="day-3-humidity"></span>% </p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header" >  <span id="day-4-date"></span> </div>
-                        <div class="card-body">
-                            <img src="" id="day-4-icon">
-                            <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-4-temp"></span>&#176 F </p>
-                            <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-4-wind"></span>MPH </p>
-                            <h5 class="card-title">Humidity: </h5>
-                            <p class="card-text"> <span id="day-4-humidity"></span>% </p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header" >  <span id="day-5-date"></span> </div>
-                        <div class="card-body">
-                            <img src="" id="day-5-icon">
-                            <h5 class="card-title" >Temp: </h5>
-                            <p class="card-text"> <span id="day-5-temp"></span>&#176 F </p>
-                            <h5 class="card-title" >Wind: </h5>
-                            <p class="card-text"> <span id="day-5-wind"></span>MPH </p>
-                            <h5 class="card-title">Humidity: </h5>
-                            <p class="card-text"> <span id="day-5-humidity"></span>% </p>
-                    
-                        </div>
-                    </div>
+        <!-- 5 Day Forecast Start -->
+
+        <section class="forecast-container">
+            <h3> <i class="bi bi-calendar3"></i> 5-DAY FORECAST</h3>
+            <div class="row forecast">
+                <h4 class="col-3" id="day-1-date"></h4>
+                <img class="col-3 img-fluid" src="" id="day-1-icon">
+                <h4 class="col-3 low" id="day-1-low"></h4>
+                <h4 class="col-3" id="day-1-high"></h4>
+            </div>
+            <div class="row forecast">
+                <h4 class="col-3" id="day-2-date"></h4>
+                <img class="col-3 img-fluid" src="" id="day-2-icon">
+                <h4 class="col-3 low" id="day-2-low"></h4>
+                <h4 class="col-3" id="day-2-high"></h4>
+            </div>
+            <div class="row forecast">
+                <h4 class="col-3" id="day-3-date"></h4>
+                <img class="col-3 img-fluid" src="" id="day-3-icon">
+                <h4 class="col-3 low" id="day-3-low"></h4>
+                <h4 class="col-3" id="day-3-high"></h4>
+            </div>
+            <div class="row forecast">
+                <h4 class="col-3" id="day-4-date"></h4>
+                <img class="col-3 img-fluid" src="" id="day-4-icon">
+                <h4 class="col-3 low" id="day-4-low"></h4>
+                <h4 class="col-3" id="day-4-high"></h4>
+            </div>
+            <div class="row forecast">
+                <h4 class="col-3" id="day-5-date"></h4>
+                <img class="col-3 img-fluid" src="" id="day-5-icon">
+                <h4 class="col-3 low" id="day-5-low"></h4>
+                <h4 class="col-3" id="day-5-high"></h4>
+            </div>
+        </section>
+
+        <section class="extra-info">
+            <div class="row justify-content-evenly">
+                <div class="col-4 info-card">
+                    <h3> <i class="bi bi-thermometer-half"></i>FEELS LIKE</h3>
+                    <h4><span id="feels-like"></span>&#176</h4>
                 </div>
-                <!-- 5 Day Forecast End -->
-            </section>  
-        </div>l
-    </div>
+                <div class="col-4 info-card">
+                    <h3> <i class="bi bi-water"></i> HUMIDITY</h3>
+                    <h4><span id="humidity"></span>%</h4>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="col-4 info-card">
+                    <h3> <i class="bi bi-eye"></i> VISIBILITY</h3>
+                    <h4><span id="visibility"></span> mi</h4>
+                </div>
+                <div class="col-4 info-card">
+                    <h3> <i class="bi bi-speedometer"></i> PRESSURE</h3>
+                    <h4><span id="pressure"></span><br>inHg</h4>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Link Moment.Js, JQuery, and JS file -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
