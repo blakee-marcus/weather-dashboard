@@ -46,6 +46,9 @@ h3 {
 h4 {
     margin: 10px 0px 5px 20px;
 }
+main {
+    margin: 1em;
+}
 input[type=text] {
     background-color: transparent;
     background-position: 10px 10px;
